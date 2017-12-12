@@ -1,0 +1,8 @@
+RULE counting pattern compile calls
+CLASS java.util.regex.Pattern
+METHOD compile(String)
+AT EXIT
+BIND regex = $1
+IF TRUE
+DO traceln("Pattern", "Compiling pattern " + $1)
+ENDRULE

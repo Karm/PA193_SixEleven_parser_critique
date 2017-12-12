@@ -1,0 +1,8 @@
+RULE inject crazy script_length value
+CLASS SixElevenBlock
+METHOD setOutput_script_length
+AT ENTRY
+IF true
+DO traceln("KARM: Byteman, injecting output_script_length value -666...");
+   $output_script_length = -666
+ENDRULE
